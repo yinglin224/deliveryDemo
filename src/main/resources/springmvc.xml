@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+">
+
+	<!-- 它背后注册了很多用于解析注解的处理器,其中就包括<context:annotation-config/>配置的注解所使用的处理器 -->
+	<!-- 所以配置了<context:component-scan base-package="">之后,便无需再配置<context:annotation-config> -->
+	<!--扫描自动依赖注入的包名 -->
+	<context:component-scan base-package="com.sean.delivery" />
+
+	<!-- 启用SpringMVC的注解功能,它会自动注册HandlerMapping、HandlerAdapter、ExceptionResolver的相关实例 -->
+	<mvc:annotation-driven />
+
+	<mvc:default-servlet-handler />
+
+
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+	<!-- 支持JSON数据格式 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+	</bean>
+
+
+	<!--视图解释器 -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- Http messageConverters，用于将对象输出到客户端 -->
+	<bean id="jsonmessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:maxUploadSize="5120000" p:maxInMemorySize="512" />
+
+</beans>

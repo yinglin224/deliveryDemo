@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<!--引入配置文件  -->
+    <properties resource="delivery.properties"/>
+
+    <context id="mybatis" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+
+		<!--是否自动生成的注释 true:是  fasle:否 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+
+        <jdbcConnection driverClass="${jdbc.driverClassName}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+
+ 		<javaTypeResolver>
+                <!-- true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型
+                false：默认,
+                    scale>0;length>18：使用BigDecimal;
+                    scale=0;length[10,18]：使用Long；
+                    scale=0;length[5,9]：使用Integer；
+                    scale=0;length<5：使用Short； -->
+            
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+		<!--生成pojo  -->
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}"/>
+		<!--生成映射文件  -->
+        <sqlMapGenerator targetPackage="${targetXMLPackage}"  targetProject="${targetJavaProject}"/>
+		<!--生成dao接口  -->
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+
+        <!-- <table tableName="DS_BUSINESS_SOURCE_CONF" domainObjectName="BusinessSource" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_BSE_DISTRICT_AREA" domainObjectName="DistrictArea" >
+        </table>
+        <table tableName="DS_CONSTANT_CONF" domainObjectName="Constant" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_CREDENTIAL" domainObjectName="Credential" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        
+        <table tableName="DS_DELIVERY_TASK" domainObjectName="DeliveryTask" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_DELIVERY_TASK_STATUS_RECORD" domainObjectName="TaskRecord" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_DEPARTMENT_CONF" domainObjectName="DepartmentConfig" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_DXBUSINESS" domainObjectName="DxBusiness" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_EXPORT_DETAIL" domainObjectName="ExportDetail" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_EXPORT_RECORD" domainObjectName="ExportRecord" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_EXPRESS_COMPANY" domainObjectName="ExpressCompany" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_EXPRESS_DEPARTMENT_RELATION" domainObjectName="ExpressDepartment" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_PRODUCT_DETAIL" domainObjectName="ProductDetail" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_SYS_MENU" domainObjectName="SystemMenu" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_SYS_ROLE" domainObjectName="SystemRole" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_SYS_ROLE_MENU" domainObjectName="SystemRoleMenu" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>
+        <table tableName="DS_UM_COMPANY_DEF" domainObjectName="Department" >
+        </table>
+        <table tableName="DS_UM_USER_DEF" domainObjectName="User" >
+        </table> 
+        <table tableName="DS_USER_CONF" domainObjectName="UserConfig" >
+        	<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
+        </table>-->
+        
+        <table tableName="DS_UM_USER_DEF" domainObjectName="User" >
+        </table> 
+        
+    </context>
+</generatorConfiguration>

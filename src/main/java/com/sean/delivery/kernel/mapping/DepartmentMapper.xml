@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sean.delivery.kernel.dao.DepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.sean.delivery.kernel.entity.Department" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="COMPANYCODE" property="companycode" jdbcType="VARCHAR" />
+    <result column="COMPANYCNAME" property="companycname" jdbcType="VARCHAR" />
+    <result column="COMPANYTNAME" property="companytname" jdbcType="VARCHAR" />
+    <result column="COMPANYENAME" property="companyename" jdbcType="VARCHAR" />
+    <result column="ADDRESSCNAME" property="addresscname" jdbcType="VARCHAR" />
+    <result column="ADDRESSTNAME" property="addresstname" jdbcType="VARCHAR" />
+    <result column="ADDRESSENAME" property="addressename" jdbcType="VARCHAR" />
+    <result column="INSURERCNAME" property="insurercname" jdbcType="VARCHAR" />
+    <result column="INSURERTNAME" property="insurertname" jdbcType="VARCHAR" />
+    <result column="INSURERENAME" property="insurerename" jdbcType="VARCHAR" />
+    <result column="UPPERCOMPANYCODE" property="uppercompanycode" jdbcType="VARCHAR" />
+    <result column="COMATTRIBUTE" property="comattribute" jdbcType="VARCHAR" />
+    <result column="COMTYPE" property="comtype" jdbcType="VARCHAR" />
+    <result column="CENTERIND" property="centerind" jdbcType="VARCHAR" />
+    <result column="COMLEVEL" property="comlevel" jdbcType="VARCHAR" />
+    <result column="POSTCODE" property="postcode" jdbcType="VARCHAR" />
+    <result column="PHONENUMBER" property="phonenumber" jdbcType="VARCHAR" />
+    <result column="FAXNUMBER" property="faxnumber" jdbcType="VARCHAR" />
+    <result column="MANAGER" property="manager" jdbcType="VARCHAR" />
+    <result column="WEBADDRESS" property="webaddress" jdbcType="VARCHAR" />
+    <result column="SERVICEPHONE" property="servicephone" jdbcType="VARCHAR" />
+    <result column="REPORTPHONE" property="reportphone" jdbcType="VARCHAR" />
+    <result column="CREATORCODE" property="creatorcode" jdbcType="VARCHAR" />
+    <result column="CREATETIME" property="createtime" jdbcType="DATE" />
+    <result column="UPDATERCODE" property="updatercode" jdbcType="VARCHAR" />
+    <result column="UPDATETIME" property="updatetime" jdbcType="DATE" />
+    <result column="VALIDIND" property="validind" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="FLAG" property="flag" jdbcType="VARCHAR" />
+    <result column="SHORTCNAME" property="shortcname" jdbcType="VARCHAR" />
+    <result column="SHORTTNAME" property="shorttname" jdbcType="VARCHAR" />
+    <result column="SHORTENAME" property="shortename" jdbcType="VARCHAR" />
+    <result column="TAXNUMBER" property="taxnumber" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="PRINTPOLICYCOMCODE" property="printpolicycomcode" jdbcType="VARCHAR" />
+    <result column="PRINTINVOICECOMCODE" property="printinvoicecomcode" jdbcType="VARCHAR" />
+    <result column="CHANNEL_CODE" property="channelCode" jdbcType="VARCHAR" />
+    <result column="RUNSTATUS" property="runstatus" jdbcType="VARCHAR" />
+    <result column="BUSINESSREPLYDATE" property="businessreplydate" jdbcType="DATE" />
+    <result column="BPERMITCOMCODE" property="bpermitcomcode" jdbcType="VARCHAR" />
+    <result column="BUSINESSLICENSE" property="businesslicense" jdbcType="VARCHAR" />
+    <result column="BPERMITSTARTDATE" property="bpermitstartdate" jdbcType="DATE" />
+    <result column="BPERMITENDDATE" property="bpermitenddate" jdbcType="DATE" />
+    <result column="BLICENSESTARTDATE" property="blicensestartdate" jdbcType="DATE" />
+    <result column="BLICENSEENDDATE" property="blicenseenddate" jdbcType="DATE" />
+    <result column="PROVINCECODE" property="provincecode" jdbcType="VARCHAR" />
+    <result column="CITYCODE" property="citycode" jdbcType="VARCHAR" />
+    <result column="COUNTRYCODE" property="countrycode" jdbcType="VARCHAR" />
+  </resultMap>
+  
+</mapper>
