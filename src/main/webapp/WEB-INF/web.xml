@@ -8,7 +8,7 @@
 	<!-- 如果不指定，会从WEB-INF下面寻找配置文件 ，contextConfigLocation属性是Spring内部固定的 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring-mybatis.xml</param-value>
+		<param-value>classpath:spring*.xml</param-value>
 	</context-param>
 
 	<!-- 防止发生java.beans.Introspector内存泄露,应将它配置在ContextLoaderListener的前面 -->
@@ -43,18 +43,18 @@
 	<!-- 配置shiro过滤器 -->
 	<!-- 这里的filter-name必须对应spring-shiro中定义的<bean id="shiroFilter">  -->
 	<!-- 通常会将此filter-mapping放置到最前面(即其他filter-mapping前面),以保证它是过滤器链中第一个起作用  -->
-<!-- 	<filter>
+	<filter>
 		<filter-name>shiroFilter</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>shiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	</filter-mapping>
 
 	<!-- springMVC核心分发器  -->
 	<servlet>
-		<servlet-name>delivery</servlet-name>
+		<servlet-name>deliveryDemo</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -67,7 +67,7 @@
 		<load-on-startup>2</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>delivery</servlet-name>
+		<servlet-name>deliveryDemo</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	

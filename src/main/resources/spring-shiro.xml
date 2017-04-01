@@ -13,7 +13,7 @@
 
 
 	<!-- 继承自AuthorizingRealm的自定义Realm,即指定Shiro验证用户登录的类为自定义的ShiroDbRealm.java -->
-	<bean id="myRealm" class="com.sean.delivery.shiro.MyRealm" />
+	<bean id="myRealm" class="com.sean.delivery.kernel.shiro.DsRealm" />
 
 	<!-- 安全管理器 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
@@ -28,13 +28,13 @@
 		<property name="securityManager" ref="securityManager" />
 		<!-- 配置三个URL -->
 		<property name="loginUrl" value="/login.jsp" /> <!-- 登陆页面 -->
-		<property name="successUrl" value="/" /> <!-- 默认登陆后页面 -->
+		<property name="successUrl" value="/index.jsp" /> <!-- 默认登陆后页面 -->
 		<property name="unauthorizedUrl" value="/unauthor.jsp" /> <!-- 权限不足页面 -->
 		<!-- url访问策略 【URL级别权限控制】 -->
 		<property name="filterChainDefinitions">
 			<value>
-				/login.* = anon
-				/delivery/**=anon
+				/logout.* = anon
+				/deliveryDemo/**=anon
 				/images/**=anon
 				/styles/**=anon
 				/batch/**=anon

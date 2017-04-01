@@ -19,39 +19,28 @@
 	color:yellow
 }
 
-
 </style>
 <script type="text/javascript" >
 
-
-
-$(function() {
-	
-	
-	alert("id"+$("#userCode").val());
-	
-	alert("name"+ $("input[name=userCode]").val());
-	
-	
-});
-
-
+	 $(function() {
+		alert("id" + $("#userCode").val());
+		/* alert("name" + $("input[name=userCode]").val()); */
+	}); 
 </script>
 </head>
 
-
 <body>
 
-<form id="formid" action="${baseurl}login" method="post">
+<form id="formid" action="${baseurl}logout.action" method="post">
 	<div>
 		<table>
 			<tr>
 				<td>用户名</td>
-				<td><input id="userCode" name="userCode"  value="123" /></td>
+				<td><input id="userCode" name="userCode"  value="lguiqua7" /></td>
 			</tr>
 			<tr>
 				<td>密码</td>
-				<td><input type="password" id="password" name="password" /></td>
+				<td><input type="password" id="password" name="password"  value="48be25c25d001a49f9863eb44d49b8a6"/></td>
 			</tr>
 			
 			<tr>
@@ -64,9 +53,9 @@ $(function() {
 				</select>
 				</td>
 			</tr>
-			<tr><td ><font>${errorMessage }</font> </td></tr>
 		</table>
-		<input type="submit" id="submit" value="登录" ></input>
+		<input type="submit" id="submit" value="登录" ></input><br/>
+		<font>${errorMsg }</font>
 	</div>
 </form>
 </body>
